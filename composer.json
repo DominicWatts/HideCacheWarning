@@ -1,0 +1,39 @@
+{
+    "name": "dominicwatts/hidecachewarning",
+    "description": "Hide admin One or more of the Cache Types are invalidated warning",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Dominic Xigen",
+            "email": "dominic@xigen.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "magento/framework": "*",
+        "magento/module-admin-notification": "*",
+        "magento/module-customer": "*",
+        "magento/module-eav": "*",
+        "magento/module-integration": "*",
+        "magento/module-page-cache": "*",
+        "magento/module-webapi": "*",
+        "php": "~~7.0.0||~7.1.0||~7.2.0||~7.3.0",
+        "symfony/console": "*"
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Xigen\\HideCacheWarning\\": ""
+        }
+    }
+}

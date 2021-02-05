@@ -1,0 +1,14 @@
+name: PHPStan
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: MilesChou/composer-action/7.3/install@master
+      env:
+        COMPOSER_AUTH: ${{secrets.COMPOSER_AUTH}}
+      with:
+        args: install --prefer-dist --no-dev --ignore-platform-reqs
+    - name: PHPStan
+      run: docker run --rm -v $PWD:/code domw/phpstan:7.3-cli analyze ./
