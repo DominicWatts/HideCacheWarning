@@ -13,7 +13,6 @@ class CacheOutdated
         \Magento\AdminNotification\Model\System\Message\CacheOutdated $subject,
         $result
     ) {
-        return $result;
         return false;
     }
 }

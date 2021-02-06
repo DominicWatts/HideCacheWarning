@@ -31,6 +31,43 @@ class Generate extends Command
 {
     const CACHE_OPTION = "cache";
 
+    /**
+     * @var LoggerInterface
+     */
+    private $logger;
+
+    /**
+     * @var State
+     */
+    private $state;
+
+    /**
+     * @var DateTime
+     */
+    private $dateTime;
+
+    /**
+     * @var TypeListInterface
+     */
+    private $typeList;
+
+    /**
+     * @var InputInterface
+     */
+    private $input;
+
+    /**
+     * @var OutputInterface
+     */
+    private $output;
+
+    /**
+     * Generate constructor.
+     * @param LoggerInterface $logger
+     * @param State $state
+     * @param DateTime $dateTime
+     * @param TypeListInterface $typeList
+     */
     public function __construct(
         LoggerInterface $logger,
         State $state,
@@ -109,6 +146,10 @@ class Generate extends Command
         parent::configure();
     }
 
+    /**
+     * Cache code array
+     * @return array
+     */
     protected function getCacheCodeArray()
     {
         return [
